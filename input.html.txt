@@ -1,0 +1,36 @@
+     
+/* quantity  */
+.bv_quantity_btn{
+  border: 1px solid #333;
+  padding: 0 15px;
+}
+.bv_quantity_input{
+  max-width: 50px;
+  padding: 0 5px;
+}
+
+             <div class="bv_quantity">
+                    <span onclick="bv_quantity_minus()" class="bv_quantity_minus bv_quantity_btn" id="bv_quantity_minus">-</span>
+                    <input type="text" name="" class="bv_quantity_input" value="1" id="bv_quantity_input">
+                    <span onclick="bv_quantity_plus()" class="bv_quantity_plus bv_quantity_btn" id="bv_quantity_plus">+</span>
+                  </div>
+
+
+
+
+
+<script>
+  const bv_quantity_minus = ()=>{
+    const old_quantity = document.getElementById('bv_quantity_input')
+    const old_input_value = parseInt(old_quantity.value);
+
+    old_quantity.setAttribute("value", `${old_input_value - 1}`)
+
+  }
+  const bv_quantity_plus = ()=>{
+    const input = document.getElementById('bv_quantity_input')
+    const old_input_value = parseInt(input.value);
+    const new_input_value = 1 + old_input_value
+    input.setAttribute("value", new_input_value)
+  }
+</script>
